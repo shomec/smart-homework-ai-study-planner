@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+crewai>=0.86.1
+sqlalchemy
+psycopg2-binary
+python-jose[cryptography]
+passlib[bcrypt]
+langchain_community
+langchain-ollama
+pydantic
+litellm>=1.50.0
+litellm[proxy]>=1.50.0
+apscheduler
+email-validator
+fastapi-sso
+python-multipart
+httpx
