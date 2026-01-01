@@ -13,5 +13,3 @@ litellm[proxy]>=1.50.0
 apscheduler
 email-validator
 fastapi-sso
-python-multipart
-httpx

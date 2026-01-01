@@ -26,7 +26,7 @@ An intelligent, multi-agent AI system that creates personalized, balanced study 
 - **Frontend**: React + Vite (Custom Premium CSS)
 - **Backend**: Python FastAPI
 - **Orchestration**: CrewAI + LangChain
-- **LLM**: Ollama (Llama 3.2)
+- **LLM**: Ollama (gemma 3:1b)
 - **Database**: PostgreSQL
 - **Infrastructure**: Docker Compose
 
@@ -34,7 +34,6 @@ An intelligent, multi-agent AI system that creates personalized, balanced study 
 
 ### Prerequisites
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed.
-- At least **8GB RAM** (recommended for running Llama 3.2 locally).
 
 ### Installation & Running
 
