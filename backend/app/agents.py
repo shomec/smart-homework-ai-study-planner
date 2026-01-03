@@ -1,11 +1,15 @@
-from crewai import LLM, Agent
-from langchain_ollama import OllamaLLM
+from crewai import Agent
+from langchain_ollama import ChatOllama
 import os
 
-llm = LLM(
-    model=os.getenv("OPENAI_MODEL_NAME", "ollama/gemma3:1b"),
-    base_url=os.getenv("OPENAI_API_BASE", "http://ollama:11434"),
-    api_key=os.getenv("OPENAI_API_KEY", "dummy")
+# Keep the ollama/ prefix - LiteLLM needs it to route to Ollama correctly
+model_name = os.getenv("LLM_MODEL", "ollama/gemma3:1b")
+
+# Use ChatOllama - CrewAI will wrap this through LiteLLM which supports Ollama natively
+llm = ChatOllama(
+    model=model_name,
+    base_url=os.getenv("OLLAMA_BASE_URL", "http://ollama:11434"),
+    temperature=0.7,
 )
 
 class StudyAgents:

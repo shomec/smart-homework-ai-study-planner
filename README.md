@@ -39,7 +39,7 @@ An intelligent, multi-agent AI system that creates personalized, balanced study 
 
 1. **Clone the repository** (if you haven't already):
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/shomec/smart-homework-ai-study-planner.git
    cd smart-homework-ai-study-planner
    ```
 
