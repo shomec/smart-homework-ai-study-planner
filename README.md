@@ -68,7 +68,7 @@ An intelligent, multi-agent AI system that creates personalized, balanced study 
 
 - **Ollama Model Not Found**: If the planner fails or hangs, the model might not have pulled correctly. Run this command manually while the containers are running:
   ```bash
-  docker compose exec ollama ollama pull llama 3.2
+  docker compose exec ollama ollama pull llama3.2
   ```
 - **Port Conflicts**: Ensure ports `5173` (Frontend), `8000` (Backend), and `5432` (Postgres) are free.
 
