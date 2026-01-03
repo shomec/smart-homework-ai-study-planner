@@ -11,7 +11,7 @@ An intelligent, multi-agent AI system that creates personalized, balanced study 
 - **Multi-Agent Collaboration**: Four specialized AI agents work together to plan, schedule, balance, and motivate.
 - **Personalized Planning**: Takes into account assignments, deadlines, and daily available hours.
 - **Well-Being Focused**: Automatically schedules breaks and prevents burnout by balancing daily workload.
-- **Local Private LLM**: Uses a local **Ollama** instance running `gemma3:1b` for privacy and cost-efficiency.
+- **Local Private LLM**: Uses a local **Ollama** instance running `llama 3.2` for privacy and cost-efficiency.
 - **Premium UI**: Modern, glassmorphism-inspired interface built with React and Vanilla CSS.
 
 ## 🏗 Architecture
@@ -26,7 +26,7 @@ An intelligent, multi-agent AI system that creates personalized, balanced study 
 - **Frontend**: React + Vite (Custom Premium CSS)
 - **Backend**: Python FastAPI
 - **Orchestration**: CrewAI + LangChain
-- **LLM**: Ollama (gemma 3:1b)
+- **LLM**: Ollama (llama3.2)
 - **Database**: PostgreSQL
 - **Infrastructure**: Docker Compose
 
@@ -47,7 +47,7 @@ An intelligent, multi-agent AI system that creates personalized, balanced study 
    ```bash
    docker compose up --build
    ```
-   > **Note**: The first run will take a few minutes as it pulls the Postgres image, builds the services, and downloads the `gemma3:1b` model (approx. 2GB) inside the Ollama container.
+   > **Note**: The first run will take a few minutes as it pulls the Postgres image, builds the services, and downloads the `llama 3.2` model (approx. 3GB) inside the Ollama container.
 
 3. **Verify Services**:
    - Frontend: [http://localhost:5173](http://localhost:5173)
@@ -68,7 +68,7 @@ An intelligent, multi-agent AI system that creates personalized, balanced study 
 
 - **Ollama Model Not Found**: If the planner fails or hangs, the model might not have pulled correctly. Run this command manually while the containers are running:
   ```bash
-  docker compose exec ollama ollama pull gemma3:1b
+  docker compose exec ollama ollama pull llama 3.2
   ```
 - **Port Conflicts**: Ensure ports `5173` (Frontend), `8000` (Backend), and `5432` (Postgres) are free.
 

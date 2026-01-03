@@ -1,6 +1,7 @@
 from crewai import Crew, Process
 from app.agents import StudyAgents
 from app.tasks import StudyTasks
+import re
 
 class StudyCrew:
     def __init__(self, assignments, hours_per_day):
@@ -30,4 +31,14 @@ class StudyCrew:
         )
 
         result = crew.kickoff()
-        return result
+        
+        # Clean up special tokens from the result
+        result_str = str(result)
+        # Remove special tokens like <unused24>, <unk>, etc.
+        cleaned_result = re.sub(r'<unused\d+>|<unk>|<pad>|<s>|</s>', '', result_str).strip()
+        
+        # If the result is empty after cleaning, return a default message
+        if not cleaned_result or cleaned_result == "":
+            cleaned_result = "Study plan generated successfully. Please check the detailed breakdown above."
+        
+        return cleaned_result

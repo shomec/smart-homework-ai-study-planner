@@ -11,7 +11,7 @@ services:
     environment:
       - DATABASE_URL=postgresql://user:password@db:5432/studyplanner
       - OLLAMA_BASE_URL=http://ollama:11434
-      - LLM_MODEL=ollama/gemma3:1b
+      - LLM_MODEL=ollama/llama3.2
     depends_on:
       db:
         condition: service_started
@@ -58,9 +58,9 @@ services:
     # For now, we'll let it start, and the backend or a script will trigger the pull if missing,
     # or the user can manually pull it.
     # Alternatively, we can use an entrypoint script to pull on start.
-    entrypoint: [ "/bin/sh", "-c", "/usr/bin/ollama serve & pid=$!; sleep 5; while ! ollama list > /dev/null 2>&1; do sleep 1; done; echo 'Pulling gemma3:1b...'; ollama pull gemma3:1b; wait $pid" ]
+    entrypoint: [ "/bin/sh", "-c", "/usr/bin/ollama serve & pid=$!; sleep 5; while ! ollama list > /dev/null 2>&1; do sleep 1; done; echo 'Pulling llama 3.2...'; ollama pull llama3.2; wait $pid" ]
     healthcheck:
-      test: [ "CMD-SHELL", "ollama list | grep 'gemma3:1b' || exit 1" ]
+      test: [ "CMD-SHELL", "ollama list | grep 'llama3.2' || exit 1" ]
       interval: 10s
       timeout: 10s
       retries: 5
