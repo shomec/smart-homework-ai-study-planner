@@ -1,4 +1,6 @@
-# Smart Homework AI Study Planner 🧠📚
+# Smart Homework AI Study Planner #
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 An intelligent, multi-agent AI system that creates personalized, balanced study plans for students. Built with **CrewAI**, **FastAPI**, **React**, and **Docker**.
 
